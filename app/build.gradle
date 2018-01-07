@@ -1,8 +1,25 @@
+buildscript {
+    repositories {
+        google()
+	jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+	jcenter()
+	maven { url "https://jitpack.io" }
+    }
+}
+
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "cf.vojtechh.apkmirror"
         minSdkVersion 16
@@ -34,7 +51,6 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
 
-
     //noinspection GradleCompatible
     compile 'com.android.support:design:25.3.1'
 
@@ -52,4 +68,3 @@ dependencies {
 
 
 }
-
